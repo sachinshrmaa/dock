@@ -43,11 +43,11 @@ jobs:
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/dock:latest
 
             # 2. Stop and remove the old container (if it exists)
-            sudo docker stop my-api || true
-            sudo docker rm my-api || true
+            sudo docker stop dock || true
+            sudo docker rm dock || true
 
             # 3. Run the new container
-            sudo docker run -d -p 80:3000 --name my-api --restart always ${{ secrets.DOCKER_USERNAME }}/dock:latest
+            sudo docker run -d -p 80:3000 --name dock --restart always ${{ secrets.DOCKER_USERNAME }}/dock:latest
 
             # 4. Cleanup unused images to save disk space
             sudo docker image prune -f
