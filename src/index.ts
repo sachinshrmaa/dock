@@ -13,6 +13,19 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // Example JSON Route
+
+app.get("/ping", (req: Request, res: Response) => {
+  res.json({ message: "pong from legacy" });
+});
+
+app.get("/papu", (req: Request, res: Response) => {
+  res.json({ message: "pong from legacy" });
+});
+
+app.get("/sachin", (req: Request, res: Response) => {
+  res.json({ message: "sharma from docker" });
+});
+
 app.get("/api/status", (req: Request, res: Response) => {
   res.json({
     status: "ok",

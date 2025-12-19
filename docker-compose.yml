@@ -1,12 +1,12 @@
-version: "3.8"
 services:
-  web:
-    build: .
+  api:
+    build:
+      context: .
+      target: dev
     ports:
       - "3000:3000"
     volumes:
-      - ./src:/app/src # Syncs your local 'src' folder to the container
-      - /app/node_modules # Prevents local node_modules from overwriting container's
+      - .:/app
+      - /app/node_modules
     environment:
       - NODE_ENV=development
-    command: npm run dev # Assumes you have a script that uses nodemon/vite
