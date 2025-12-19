@@ -13,6 +13,9 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // Example JSON Route
+app.get("/deploy", (req: Request, res: Response) => {
+  res.json({ message: "new chnages deployed" });
+});
 
 app.get("/ping", (req: Request, res: Response) => {
   res.json({ message: "pong from legacy" });
