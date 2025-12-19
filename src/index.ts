@@ -17,6 +17,10 @@ app.get("/deploy", (req: Request, res: Response) => {
   res.json({ message: "new chnages deployed" });
 });
 
+app.get("/tek", (req: Request, res: Response) => {
+  res.json({ message: "bahadur" });
+});
+
 app.get("/ping", (req: Request, res: Response) => {
   res.json({ message: "pong from legacy" });
 });
